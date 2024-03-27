@@ -21,7 +21,7 @@ def torIP():
 # Created by Alex Beals
 # Last updated: June 28,2017 - Kenny McAvoy updated this from python 2 to 3 and added tor functionality
 
-base_url = "https://polldaddy.com/poll/"
+base_url = "https://poll.fm/"
 redirect = ""
 
 useragents = []
@@ -76,7 +76,7 @@ def vote_once(form, value):
     # Search for the hidden form value
     pz = re.search("type='hidden' name='pz' value='(.*?)'",init.text).group(1)
     # Build the GET url to vote
-    request = "https://polldaddy.com/vote.php?va=" + str(data['at']) + "&pt=0&r=0&p=" + str(form) + "&a=" + str(value) + "%2C&o=&t=" + str(data['t']) + "&token=" + str(data['n']) + "&pz=" + str(pz)
+    request = "https://poll.fm/vote.php?va=" + str(data['at']) + "&pt=0&r=0&p=" + str(form) + "&a=" + str(value) + "%2C&o=&t=" + str(data['t']) + "&token=" + str(data['n']) + "&pz=" + str(pz)
     try:
         send = c.get(request, headers=redirect, verify=False, proxies=current_proxy)
     except:
@@ -118,11 +118,11 @@ def vote(form, value, times, wait_min = None, wait_max = None):
             
 
 # Initialize these to the specific form and how often you want to vote
-poll_id = None
-answer_id = None
-number_of_votes = None
-wait_min = None
-wait_max = None
+poll_id = 13523858
+answer_id = 60463245
+number_of_votes = 1000
+wait_min = 3
+wait_max = 5
 
 get_all_proxies()
 get_all_useragents()
