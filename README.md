@@ -1,4 +1,4 @@
-# Poll.js Voter
+# Poll.fm Voter
 
 This is pretty easy to use.  Just download the Python script, and customize the variables for what form/answer/number of votes.
 Be sure to add your tor hash password found in torrc file.  
